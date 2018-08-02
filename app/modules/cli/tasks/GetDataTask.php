@@ -81,7 +81,7 @@ class GetDataTask extends MainTask
      */
     protected static function getData($date, $fid)
     {
-        $url = 'http://115.182.42.14/search/flightByDate?';
+        $url = 'http://happiness-dev.feeyo.com/search/flightByDate?';
         $array = ['date' => $date, 'fid' => $fid, 'limit' => 10000];
         $str = http_build_query($array);
         $url .= $str;
