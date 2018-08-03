@@ -13,7 +13,6 @@ class IndexController extends ControllerBase
             View::LEVEL_NO_RENDER
         );
         chdir('../');
-        echo getcwd();
         system(" php run getdata begin 20180803");
         exit();
     }
@@ -25,8 +24,11 @@ class IndexController extends ControllerBase
         echo $dir;
         $dirList = scandir($dir);
         $a = array_slice($dirList, 2);
+
+        print_r($a);
+        exit();
+        $this->view->disable();
         $this->view->dir = $a;
-        $this->url->get();
     }
 
     public function downloadAction()
