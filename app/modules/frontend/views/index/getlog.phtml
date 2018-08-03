@@ -1,0 +1,10 @@
+<table>
+
+    <?php foreach ($dir as $v){ ?>
+    <tr>
+        <td>
+            <a href="<?php echo $this->url->get('index/download',['file_name'=>$v]); ?>"><?php echo $v ?></a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>
