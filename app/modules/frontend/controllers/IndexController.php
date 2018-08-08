@@ -13,8 +13,21 @@ class IndexController extends ControllerBase
             View::LEVEL_NO_RENDER
         );
         chdir('../');
-        system(" php run getdata begin 20180803");
-        exit();
+
+	if (function_exists('system')) {
+            $cmd = 'ps axu|grep "php run Get begin"|grep -v "grep"|wc -l';
+            $ret = shell_exec($cmd);
+            if (!intval($ret)) {
+
+             system("/usr/local/php/bin/php run Get begin 20180810");
+
+            }else{
+                throw new Exception("程序已执行");
+            }
+        }else{
+            throw new Exception("函数被禁用");
+        }
+	
     }
 
     public function getLogAction()

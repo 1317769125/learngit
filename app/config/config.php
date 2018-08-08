@@ -12,9 +12,9 @@ return new \Phalcon\Config([
     'database' => [
         'adapter'  => 'Mysql',
         'host'     => '127.0.0.1',
-        'username' => 'zhangcx',
-        'password' => '0EKehCTt96sizxSbfWLbqYrRFKaL0q',
-        'dbname'   => 'dbsnatch',
+        'username' => 'root',
+	'password' => '',
+        'dbname'   => '',
         'charset'  => 'utf8',
     ],
 
